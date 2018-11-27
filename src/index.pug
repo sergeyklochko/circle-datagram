@@ -1,0 +1,43 @@
+include ./include/header.pug
+
+body
+  .container
+    .wrapper
+      .datagram-section
+        // Настройки вызова диаграмы:
+          segment - угол поворота в процентах
+          time - время анимации
+          альтернативный способ задать настройки - прямой вызов rotate(segment, time) из самого скрипта.
+        .datagram(segment = 0, time = 0.6)
+          img.circle(src='./img/circle.svg')
+        //- div
+          img.blue.blue1(src='./img/blue-full.svg')
+          img.blue.blue2.blue-arrow(src='./img/blue.svg')
+          img.green.green1(src='./img/green-full.svg')
+          img.green.green2(src='./img/green-full.svg')
+          img.green.green3(src='./img/green-full.svg')
+          img.green.green-arrow(src='./img/green.svg')
+          img.gray(src='./img/gray.svg')
+          img.circle(src='./img/circle.svg')
+      .settings-section
+        p Enter value
+        input.segment(type='number', maxlength = '3', min = '1', max = '100', placeholder='1-100')
+        button Run
+
+    .stages Stages
+    .pictures
+      img.circle(src='./img/0-30.svg')
+      img.circle(src='./img/30-50.svg')
+      img.circle(src='./img/50-70.svg')
+      img.circle(src='./img/70-80.svg')
+      img.circle(src='./img/80-100.svg')
+
+
+    .text
+      p Прототип построения диаграмы разработан для сайта 7days.ru
+      p Для размещения диаграмы достаточно указать в коде страницы
+      p #{'<div class="datagram" segment="0" time="0.6">'}
+      p где segment - значения показателя в процентах (1-100), time - время исполнения анимации в секундах.
+
+
+  include ./include/footer.pug

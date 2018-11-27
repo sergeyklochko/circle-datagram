@@ -1,0 +1,125 @@
+@import '../node_modules/normalize.css/normalize.css'
+@import 'screens.sass'
+@import 'my-normalize'
+
+$size: 300px
+$phone-size: 250px
+$green: #A4CE4E
+$blue: #0090DA
+$text-color: #333
+
+html, body
+  margin: 0
+  font-family: 'Open Sans'
+
+.container
+  width: 80%
+  max-width: 1000px
+  margin: 50px auto
+  +phones
+    width: 100%
+    margin: 0px auto
+
+.wrapper
+  display: flex
+  flex-wrap: nowrap
+  +phones
+    flex-wrap: wrap
+
+.datagram
+  margin: 20px 0
+
+.datagram-section
+  display: flex
+  align-self: center
+  margin-right: 10%
+  +phones
+    margin: 20px auto
+
+.circle
+  width: $size
+  height: $size
+  +phones
+    width: $phone-size
+    height: $phone-size
+
+
+.blue, .green, .gray
+  position: absolute
+  width: $size
+  height: $size
+  +phones
+    width: $phone-size
+    height: $phone-size
+
+.settings-section
+  width: 60%
+  margin: 0 0 0 auto
+  padding: 20px 0
+  text-align: center
+  align-self: center
+  border: solid 1px $green
+  +phones
+    width: 90%
+    margin: 0 auto
+    padding: 0
+  p
+    color: $text-color
+    font-size: 50px
+    margin: 0
+    padding: 20px
+    +phones
+      padding: 10px
+  input
+    display: block
+    margin: 20px auto
+    padding: 0 10px
+    width: 76px
+    line-height: 30px
+    font-size: 24px
+    +phones
+      margin: 0px auto
+    &:active,
+    &:focus
+      outline: none
+  button
+    color: white
+    border: none
+    padding: 10px 30px
+    margin: 20px auto 30px
+    font-size: 24px
+    background-color: $green
+    &:hover
+      background-color: $blue
+    &:active,
+    &:focus
+      outline: none
+
+.stages
+  padding: 0
+  text-align: center
+  margin: 50px auto 0px
+  font-size: 36px
+  color: $text-color
+  +phones
+    margin: 30px auto 0px
+
+.pictures
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  width: 100%
+  margin: 50px auto 40px
+  +phones
+    margin-top: 20px
+    width: 90%
+  img
+    width: 20%
+    height: 20%
+
+.text
+  color: text-color
+  margin: 0 auto
+  border-top: 1px $green solid
+  +phones
+    width: 90%
